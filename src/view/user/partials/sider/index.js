@@ -6,7 +6,11 @@ import "./styles.css";
 const { Sider } = Layout;
 const AppSider = ({ collapsed, onCollapse }) => {
   return (
-    <Sider collapsible collapsed={collapsed} onCollapse={(value) => onCollapse(value)}>
+    <Sider
+      collapsible
+      collapsed={collapsed}
+      onCollapse={(value) => onCollapse(value)}
+    >
       <div className="logo-container" />
       <SideMenu />
     </Sider>

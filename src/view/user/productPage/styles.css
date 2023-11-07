@@ -1,5 +1,9 @@
 .product-page-content {
-    .ant-card {
-        padding: 35px;
-    }
+  .ant-card {
+    padding: 35px;
+  }
+}
+
+.link {
+  text-decoration: none;
 }

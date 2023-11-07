@@ -5,11 +5,12 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import ProductsProvider from "./view/user/store/products-context";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ProductsProvider>
     <App />
-  </React.StrictMode>,
+  </ProductsProvider>,
   document.getElementById("root")
 );
 

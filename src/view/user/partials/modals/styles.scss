@@ -1,109 +1,109 @@
 .AddToCartModal {
-    display: block!important;  
-    .close {
-        border: none;
-        background-color: white;
+  display: block !important;
+  .close {
+    border: none;
+    background-color: white;
+  }
+  .product-quantity {
+    margin-top: 40px;
+  }
+  @media screen and (max-width: 576px) {
+    .modal-content {
+      width: 70%;
+      margin: auto;
     }
-    .product-quantity {
-        margin-top: 40px;
-    }
-    @media screen and (max-width: 576px) {
-        .modal-content {
-            width: 70%;
-            margin: auto;
-        }
-    }
+  }
 }
 
 .ShowCartModal {
-    display: block!important;
-    .modal-dialog {
-        max-width: none;
+  display: block !important;
+  .modal-dialog {
+    max-width: none;
+  }
+  .modal-content {
+    width: 50%;
+    margin: auto;
+  }
+  .close {
+    border: none;
+    background-color: white;
+  }
+  .modal-body {
+    .product-info {
+      .text {
+        margin-bottom: 0;
+      }
+      .product-cost {
+        margin-top: 10px;
+      }
     }
+    .text-right {
+      text-align: right;
+    }
+    .quantity-col {
+      .text {
+        margin-bottom: 0;
+      }
+    }
+    .customerInfoForm {
+      label {
+        margin-bottom: 5px;
+      }
+      small {
+        font-size: 0.75rem;
+      }
+      .row {
+        width: 80%;
+      }
+    }
+  }
+  @media screen and (max-width: 576px) {
+    text-align: center;
     .modal-content {
+      width: 70%;
+      margin: auto;
+    }
+    .product-details-row {
+      margin-bottom: 30px;
+      .col-md-4 {
+        padding: 0;
+        margin: 0;
+      }
+      .form-check {
         width: 50%;
         margin: auto;
-    }
-    .close {
-        border: none;
-        background-color: white;
-    }
-    .modal-body {
-        .product-info {
-            .text {
-                margin-bottom: 0;
-            }
-            .product-cost {
-                margin-top: 10px;
-            }
-        }
-        .text-right {
-            text-align: right;
-        }   
-        .quantity-col {
-            .text {
-                margin-bottom: 0;
-            }
-        }
-        .customerInfoForm {
-            label {
-                margin-bottom: 5px;
-            }
-            small {
-                font-size: 0.75rem;
-            }
-            .row {
-                width: 80%;
-            }
-        }
-    }
-    @media screen and (max-width: 576px) {
         text-align: center;
-        .modal-content {
-            width: 70%;
-            margin: auto;
+        .form-check-input {
+          float: none;
         }
-        .product-details-row {
-            margin-bottom: 30px;
-            .col-md-4 {
-                padding: 0;
-                margin: 0;
-            }
-            .form-check {
-                width: 50%;
-                margin: auto;
-                text-align: center;
-                .form-check-input {
-                    float: none;
-                }
-            }
-            .product-img {
-                width: 50%;
-                margin: auto;
-            }
-            .quantity-col {
-                width: 50%;
-                margin: auto;
-                text-align: center!important;
-            }
-            .col-md-2 {
-                width: 70%;
-                margin: auto;
-                text-align: center!important;
-                .text-right {
-                    text-align: center;
-                }
-            }
+      }
+      .product-img {
+        width: 50%;
+        margin: auto;
+      }
+      .quantity-col {
+        width: 50%;
+        margin: auto;
+        text-align: center !important;
+      }
+      .col-md-2 {
+        width: 70%;
+        margin: auto;
+        text-align: center !important;
+        .text-right {
+          text-align: center;
         }
-        .sumary-info {
-            .col-md-3 {
-                width: 50%;
-                text-align: center!important;
-            }
-            .col-md-2 {
-                width: 50%;
-                text-align: center!important;
-            }
-        }
+      }
     }
+    .sumary-info {
+      .col-md-3 {
+        width: 50%;
+        text-align: center !important;
+      }
+      .col-md-2 {
+        width: 50%;
+        text-align: center !important;
+      }
+    }
+  }
 }

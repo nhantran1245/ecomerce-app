@@ -13,15 +13,10 @@ function App() {
         <PageContent/>
         <AppFooter/> */}
         <Routes>
-          <Route path="/admin/*" element={<Admin/>} />
-          <Route path="*" element={<UserPage />}/>
+          <Route path="/admin/*" element={<Admin />} />
+          <Route path="*" element={<UserPage />} />
         </Routes>
         {/* <UserPage /> */}
-
-        {/* <Routes>
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/admin" element={<Admin/>} />
-        </Routes> */}
       </Router>
     </div>
   );
