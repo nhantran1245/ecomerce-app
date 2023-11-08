@@ -23,5 +23,5 @@ export default function AppHeader() {
         <h3 style={contentStyle}>4</h3>
       </div>
     </Carousel>
-  )
+  );
 }

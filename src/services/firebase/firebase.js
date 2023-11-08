@@ -15,7 +15,6 @@ const app = initializeApp({
   projectId: "flower-shop-caa2e",
   storageBucket: "flower-shop-caa2e.appspot.com",
   messagingSenderId: "945577682273",
-
 });
 
 export const db = getFirestore();

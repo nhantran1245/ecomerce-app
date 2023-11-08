@@ -13,7 +13,7 @@
 //     productName: "Bó hoa sáp",
 //     image: "https://thegioihoasap.com/wp-content/uploads/2021/01/bo-hoa-sap-dep-1-247x296.jpg?v=1620470552",
 //     originalCost: 1000000,
-//     promoteCost: 500000  
+//     promoteCost: 500000
 //   },
 //   {
 //     isSale: false,
@@ -26,7 +26,7 @@
 //     productName: "Bó hoa sáp",
 //     image: "https://thegioihoasap.com/wp-content/uploads/2021/01/bo-hoa-sap-dep-1-247x296.jpg?v=1620470552",
 //     originalCost: 300000,
-//     promoteCost: 200000  
+//     promoteCost: 200000
 //   }
 // ];
 
@@ -49,7 +49,7 @@
 //       items.push({...doc.data(), id: doc.id });
 //     });
 //     setListProduct(items);
-//   }); 
+//   });
 // }, []);
 
 // const addToCartAction = (item) => {
@@ -93,16 +93,16 @@
 //         </Content>
 //         <AppFooter/>
 //       </Layout>
-//     </div> 
+//     </div>
 //   )
 // }
-
 
 import React, { useState } from "react";
 import { Breadcrumb, Layout, theme } from "antd";
 import AppHeader from "./partials/header/Header";
 import PageContent from "./pageContent";
 import AppSider from "./partials/sider";
+
 const { Content, Footer } = Layout;
 const UserPage = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -115,7 +115,7 @@ const UserPage = () => {
         minHeight: "100vh",
       }}
     >
-      <AppSider collapsed={collapsed} onCollapse={setCollapsed}/>
+      <AppSider collapsed={collapsed} onCollapse={setCollapsed} />
       <Layout>
         <AppHeader />
         <Content
@@ -128,10 +128,10 @@ const UserPage = () => {
               margin: "16px 0",
             }}
           >
-            <Breadcrumb.Item>Sản phẩm</Breadcrumb.Item>
-            <Breadcrumb.Item>Xe đạp</Breadcrumb.Item>
+            {/* <Breadcrumb.Item>Sản phẩm</Breadcrumb.Item>
+            <Breadcrumb.Item>Xe đạp</Breadcrumb.Item> */}
           </Breadcrumb>
-          <PageContent color={colorBgContainer}/>
+          <PageContent color={colorBgContainer} />
         </Content>
         <Footer
           style={{
