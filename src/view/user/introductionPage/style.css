@@ -1,0 +1,10 @@
+.introduction-page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.imageIntroduction {
+  margin: 0 auto;
+}
