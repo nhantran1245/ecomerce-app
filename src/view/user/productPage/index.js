@@ -43,7 +43,6 @@ const ProductPage = () => {
       label: "Tất cả",
       key: "all",
     });
-
     return products || [];
   }, [state]);
 
