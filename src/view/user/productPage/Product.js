@@ -36,13 +36,13 @@ const Product = ({ product, index, url }) => {
                 )}
               </Typography.Paragraph>
             }
-            description={
-              <Typography.Paragraph
-                ellipsis={{ rows: 2, expandable: false, symbol: "more" }}
-              >
-                {product.description}
-              </Typography.Paragraph>
-            }
+            // description={
+            //   <Typography.Paragraph
+            //     ellipsis={{ rows: 2, expandable: false, symbol: "more" }}
+            //   >
+            //     {product.description}
+            //   </Typography.Paragraph>
+            // }
             style={{ height: "20%" }}
           ></Card.Meta>
         </Card>

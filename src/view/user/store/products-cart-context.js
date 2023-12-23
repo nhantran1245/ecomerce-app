@@ -125,7 +125,10 @@ const reducer = (state, action) => {
         ),
       })
         .then(() => {
-          openNotification("Thông Báo", "Đặt Hàng Thành Công");
+          openNotification(
+            "Thông Báo",
+            "Đặt Hàng Thành Công, Shop Sẽ Liên Hệ Với Bạn Trong Thời Gian Sớm Nhất"
+          );
           localStorage.setItem("cart", JSON.stringify([]));
         })
         .catch((error) => {

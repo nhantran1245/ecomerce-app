@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useContext, useRef, useState } from "react";
 import { ProductsCartContext } from "../store/products-cart-context";
 import {
@@ -34,22 +33,12 @@ const Cart = () => {
     const regex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
     return regex.test(numberPhone);
   };
-=======
-import React, { useContext } from "react";
-import { ProductsContext } from "../store/products-context";
-import { Badge, Card, Image, Typography, Button, Flex } from "antd";
-import { numberToVND } from "../../../services/utils/common";
-
-const Cart = () => {
-  const { items, updateCart } = useContext(ProductsContext);
->>>>>>> e5558c56423fa5f90911be1fe978e283f2ac7a7b
 
   const total = items.reduce((total, item) => {
     const { product, quantity } = item;
     return total + product.price * quantity;
   }, 0);
 
-<<<<<<< HEAD
   const columns = [
     {
       title: "Sản Phẩm",
@@ -226,85 +215,6 @@ const Cart = () => {
           </Form>
         </Modal>
       </Card>
-=======
-  return (
-    <>
-      {items.length === 0 ? (
-        <p>No Have Any Products</p>
-      ) : (
-        <>
-          {items.map((item) => {
-            const { product, quantity } = item;
-
-            return (
-              <Badge.Ribbon
-                className="itemCardBadge"
-                text={`-${product.discountPercentage}%`}
-                color="red"
-                key={product.id}
-              >
-                <Card
-                  className="itemCard"
-                  cover={
-                    <Image
-                      className="itemCardImage"
-                      src={product.thumbnail}
-                      style={{ width: "200px" }}
-                    />
-                  }
-                >
-                  <Card.Meta
-                    title={
-                      <Typography.Paragraph>
-                        <Typography.Text>{product.title}</Typography.Text>
-                        <br />
-                        {numberToVND(product.price)}{" "}
-                        <Typography.Text delete type="danger">
-                          {numberToVND(
-                            product.price +
-                              (product.price * product.discountPercentage) / 100
-                          )}
-                        </Typography.Text>
-                      </Typography.Paragraph>
-                    }
-                    description={
-                      <Typography.Paragraph
-                        ellipsis={{
-                          rows: 2,
-                          expandable: false,
-                          symbol: "more",
-                        }}
-                      >
-                        Số lượng: {quantity}{" "}
-                        <Flex>
-                          <Button
-                            onClick={() => {
-                              updateCart(product.id, quantity + 1);
-                            }}
-                          >
-                            +
-                          </Button>
-                          <Button
-                            onClick={() => {
-                              updateCart(product.id, quantity - 1);
-                            }}
-                          >
-                            -
-                          </Button>
-                        </Flex>
-                      </Typography.Paragraph>
-                    }
-                  ></Card.Meta>
-                </Card>
-              </Badge.Ribbon>
-            );
-          })}
-
-          <p>Tổng tiền: {numberToVND(total)}</p>
-          <Button>Thanh Toán</Button>
-        </>
-      )}
->>>>>>> e5558c56423fa5f90911be1fe978e283f2ac7a7b
     </>
   );
 };

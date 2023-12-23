@@ -28,7 +28,7 @@ const IntroductionPage = () => {
 
         <hr style={{ backgroundColor: "#f5f5f5" }} />
 
-        <p style={{ padding: "0.5rem", textAlign: "left" }}>
+        {/* <p style={{ padding: "0.5rem", textAlign: "left" }}>
           Quá trình hình thành và phát triển Cửa hàng xe đạp – xe điện Thanh
           Tùng tiền thân là cửa hàng xe đạp Asama Thanh Tùng được thành lập vào
           năm 2007 tại quận Thủ Đức ( nay là Thành phố Thủ Đức). Năm 2019, Thanh
@@ -39,10 +39,10 @@ const IntroductionPage = () => {
           triển bán lẻ, mở thêm cơ sở số 4 tại thành phố Dĩ An, Bình Dương. Năm
           2023, Thanh Tùng mở thêm cơ sở số 5 tại phường Linh Xuân, Thành phố
           Thủ Đức.
-        </p>
+        </p> */}
       </div>
       <Row>
-        <Col>
+        {/* <Col>
           <Card title="Quá trình hình thành và phát triển" bordered={false}>
             <ul>
               <li>
@@ -69,7 +69,7 @@ const IntroductionPage = () => {
               </li>
             </ul>
           </Card>
-        </Col>
+        </Col> */}
 
         <Col>
           <Card title="HỆ THỐNG XE ĐẠP – XE ĐIỆN THANH TÙNG – UY TÍN LÀ VÀNG!">
@@ -78,19 +78,16 @@ const IntroductionPage = () => {
                 :17 Lê Văn Ninh, KP3, p.Linh Tây, TP.Thủ Đức, TPHCM
               </Li>
               <Li title={"CS2"}>
-                :107-109 Đỗ Xuân Hợp, p.Phước Long B, TP.Thủ Đức, TPHCM
+                :40 Đỗ Xuân Hợp, p.Phước Long B, TP.Thủ Đức, TPHCM
               </Li>
               <Li title={"CS3"}>
-                :257 Lê Văn Việt, p.Hiệp Phú, TP.Thủ Đức, TPHCM
-              </Li>
-              <Li title={"CS4"}>
                 :76 Quốc lộ 1K, p.Linh Xuân, TP.Thủ Đức, TPHCM
               </Li>
-              <Li title={"CS5"}>
+              <Li title={"CS4"}>
                 :238 đường GS1, KP Nhị Đồng 2, p.Dĩ An, TP.Dĩ An, Bình Dương
               </Li>
-              <Li title={"Email"}>:Deptrai</Li>
-              <Li title={"Hotline"}>:0906.151.057</Li>
+              <Li title={"Hotline"}>:0906151057</Li>
+              <Li title={"Zalo"}>: 0906151057 Hoặc 0974294781 </Li>
             </ul>
           </Card>
         </Col>
