@@ -1,13 +1,16 @@
 import { useLocation } from "react-router-dom";
-import { Button, Col, Flex, Image, Typography, notification } from "antd";
+import { Button, Col, Flex, Typography, notification } from "antd";
 import { numberToVND } from "../../../services/utils/common";
 import { ProductsCartContext } from "../store/products-cart-context";
-
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import ProductDetailCard from "./ProductDetailCard";
 
 const InforProduct = () => {
   let { state } = useLocation();
   const { addToCart, items } = useContext(ProductsCartContext);
+  useEffect(() => {
+    console.log(state);
+  }, []);
 
   const openNotification = (title, message) => {
     notification.open({
@@ -75,12 +78,14 @@ const InforProduct = () => {
   return (
     <Flex>
       <Col span={12}>
-        <Image
-          className="itemCardImage"
-          src={state.product.thumbnail}
-          style={{ width: "80%" }}
-          preview={false}
-        />
+        {/* {state.product.thumbnail.map((item, index) => (
+          <Image
+            src={item}
+            style={{ width: "100%", height: "100%", padding: "1rem" }}
+            key={index}
+          />
+        ))} */}
+        <ProductDetailCard Images={state.product.thumbnail} />
       </Col>
       <Col span={12}>
         <Typography.Paragraph>

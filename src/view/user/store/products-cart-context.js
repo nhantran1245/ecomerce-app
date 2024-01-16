@@ -76,6 +76,12 @@ const reducer = (state, action) => {
     case actions.UPDATE_CART: {
       const { productId, quantity } = action.payload;
       if (quantity === 0) {
+        localStorage.setItem(
+          "cart",
+          JSON.stringify(
+            state.items.filter((item) => item.product.id !== productId)
+          )
+        );
         return {
           ...state,
           items: state.items.filter((item) => item.product.id !== productId),
