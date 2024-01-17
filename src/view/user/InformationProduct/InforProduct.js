@@ -98,7 +98,7 @@ const InforProduct = () => {
         </Typography.Paragraph>
         <Typography.Paragraph
           ellipsis={{ rows: 3, expandable: false, symbol: "more" }}
-          style={{ width: "50%" }}
+          style={{ width: "50%", display: "block" }}
         >
           Mô Tả: {state.product.description}
         </Typography.Paragraph>

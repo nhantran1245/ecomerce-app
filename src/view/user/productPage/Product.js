@@ -18,7 +18,13 @@ const Product = ({ product, index, url }) => {
         <Card
           className="itemCard"
           key={index}
-          cover={<Image className="itemCardImage" src={product.thumbnail} />}
+          cover={
+            <Image
+              preview={false}
+              className="itemCardImage"
+              src={product.thumbnail}
+            />
+          }
         >
           <Card.Meta
             title={

@@ -13,6 +13,7 @@ const PageContent = ({ color }) => {
         padding: 24,
         minHeight: 360,
         background: color,
+        height: "100%",
       }}
     >
       <Routes>
