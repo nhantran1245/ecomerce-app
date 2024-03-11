@@ -1,16 +1,7 @@
+import "./styles.css";
 import React, { useContext, useRef, useState } from "react";
 import { ProductsCartContext } from "../store/products-cart-context";
-import {
-  Image,
-  Button,
-  Flex,
-  Table,
-  Card,
-  Typography,
-  Modal,
-  Input,
-  Form,
-} from "antd";
+import { Image, Button, Table, Card, Modal, Input, Form } from "antd";
 import { numberToVND } from "../../../services/utils/common";
 
 const Cart = () => {
@@ -46,17 +37,17 @@ const Cart = () => {
       key: "product",
     },
 
-    {
-      title: "ĐƠN GIÁ",
-      key: "price",
-      dataIndex: "price",
-    },
+    // {
+    //   title: "ĐƠN GIÁ",
+    //   key: "price",
+    //   dataIndex: "price",
+    // },
 
-    {
-      title: "SỐ LƯỢNG",
-      key: "quantity",
-      dataIndex: "quantity",
-    },
+    // {
+    //   title: "SỐ LƯỢNG",
+    //   key: "quantity",
+    //   dataIndex: "quantity",
+    // },
     {
       title: "THÀNH TIỀN",
       key: "total",
@@ -74,46 +65,80 @@ const Cart = () => {
     return {
       key: product.id,
       product: (
-        <div>
-          <Image
-            src={product.thumbnail}
-            style={{ width: "100px", height: "100px" }}
-          />
-          <p>{product.title}</p>
+        <div className="flex flex-col justify-start leading-3">
+          <div className="w-[100px] my-2">
+            <Image src={product.thumbnail} className="w-full" />
+          </div>
+          <p className="leading-5">Tên: {product.title}</p>
+          <div className="flex flex-col">
+            <p className="text-red-500 font-semibold">
+              {numberToVND(product.price)}
+            </p>
+            {product.discountPercentage > 0 && (
+              <p className=" line-through text-gray-700 -mt-1">
+                {numberToVND(
+                  product.price +
+                    (product.price * product.discountPercentage) / 100
+                )}
+              </p>
+            )}
+          </div>
+
+          <div className="flex flex-col">
+            <p className="">Số lượng: {quantity}</p>
+            <div>
+              <Button
+                className="w-1 mr-[0.1rem] text-center"
+                onClick={() => {
+                  updateCart(product.id, quantity - 1);
+                }}
+              >
+                -
+              </Button>
+              <Button
+                className="w-1"
+                onClick={() => {
+                  updateCart(product.id, quantity + 1);
+                }}
+              >
+                +
+              </Button>
+            </div>
+          </div>
         </div>
       ),
-      price: (
-        <Typography.Paragraph>
-          {numberToVND(product.price)}{" "}
-          {product.discountPercentage > 0 && (
-            <Typography.Text delete type="danger">
-              {numberToVND(
-                product.price +
-                  (product.price * product.discountPercentage) / 100
-              )}
-            </Typography.Text>
-          )}
-        </Typography.Paragraph>
-      ),
-      quantity: (
-        <Flex style={{ alignItems: "center", gap: "0.5rem" }}>
-          <Button
-            onClick={() => {
-              updateCart(product.id, quantity - 1);
-            }}
-          >
-            -
-          </Button>
-          <Typography.Text>{quantity}</Typography.Text>
-          <Button
-            onClick={() => {
-              updateCart(product.id, quantity + 1);
-            }}
-          >
-            +
-          </Button>
-        </Flex>
-      ),
+      // price: (
+      //   <Typography.Paragraph>
+      //     {numberToVND(product.price)}{" "}
+      //     {product.discountPercentage > 0 && (
+      //       <Typography.Text delete type="danger">
+      //         {numberToVND(
+      //           product.price +
+      //             (product.price * product.discountPercentage) / 100
+      //         )}
+      //       </Typography.Text>
+      //     )}
+      //   </Typography.Paragraph>
+      // ),
+      // quantity: (
+      //   <div className="flex flex-col">
+      //     <Button
+      //       onClick={() => {
+      //         updateCart(product.id, quantity - 1);
+      //       }}
+      //     >
+      //       -
+      //     </Button>
+      //     <Typography.Text>{quantity}</Typography.Text>
+      //     <Button
+      //       onClick={() => {
+      //         updateCart(product.id, quantity + 1);
+      //       }}
+      //     >
+      //       +
+      //     </Button>
+      //   </div>
+      // ),
       total: <p>{numberToVND(product.price * quantity)}</p>,
       delete: (
         <Button
@@ -129,15 +154,12 @@ const Cart = () => {
 
   return (
     <>
-      <Table
-        columns={columns}
-        dataSource={data}
-        pagination={false}
-        scroll={{ x: 1300 }}
-      />
+      <Table columns={columns} dataSource={data} pagination={false} />
 
       <Card style={{ width: "100%" }}>
-        <p>Tổng tiền: {numberToVND(total)}</p>
+        <p className="font-semibold">
+          Tổng tiền: <span className="text-red-400">{numberToVND(total)}</span>
+        </p>
         {total > 0 && <Button onClick={showModal}>Xác Nhận Đơn Hàng</Button>}
         <Modal
           title="Xác nhận đơn hàng"

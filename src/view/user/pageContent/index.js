@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProductPage from "../productPage";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import HomePage from "../homePage";
 import IntroductionPage from "../introductionPage";
 import InforProduct from "../InformationProduct/InforProduct";
 import Cart from "../cart";
 
 const PageContent = ({ color }) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/");
+  }, []);
+
   return (
     <div
       style={{

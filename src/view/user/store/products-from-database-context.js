@@ -14,6 +14,7 @@ const actions = {
 const reducer = (state, action) => {
   switch (action.type) {
     case actions.GET_PRODUCTS_FROM_DATABASE: {
+      // console.log("payload" + action.payload);
       return {
         ...state,
         products: action.payload,
@@ -26,12 +27,8 @@ const ProductsFromDataBaseProvider = (prop) => {
   useEffect(() => {
     const getData = async () => {
       const querySnapshot = await getDocs(collection(db, "products"));
-      const data = querySnapshot.docs.map((doc) => {
-        return {
-          key: doc.id,
-          products: doc.data().products,
-        };
-      });
+      const data = querySnapshot.docs.map((doc) => doc.data());
+      // console.log(data);
       getProductsFromDatabase(data);
       return data;
     };

@@ -98,7 +98,8 @@
 // }
 
 import React, { useContext, useState } from "react";
-import { Breadcrumb, Layout, Spin, theme } from "antd";
+import { Breadcrumb, Button, Layout, Spin, theme } from "antd";
+import { UpCircleOutlined } from "@ant-design/icons";
 // import AppHeader from "./partials/header/Header";
 import PageContent from "./pageContent";
 import AppSider from "./partials/sider";
@@ -115,47 +116,55 @@ const UserPage = () => {
   const { products } = useContext(ProductsFromDataBaseContext);
 
   return (
-    <Layout
-      style={{
-        minHeight: "100vh",
-      }}
-    >
+    <Layout className="min-h-screen">
       <AppSider collapsed={collapsed} onCollapse={setCollapsed} />
-      <Layout>
-        {/* <AppHeader /> */}
-        <Content
+      {/* <AppHeader /> */}
+      <Content
+        style={{
+          margin: "0 16px",
+        }}
+      >
+        <Breadcrumb
           style={{
-            margin: "0 16px",
+            margin: "16px 0",
           }}
         >
-          <Breadcrumb
-            style={{
-              margin: "16px 0",
-            }}
-          >
-            {/* <Breadcrumb.Item>Sản phẩm</Breadcrumb.Item>
+          {/* <Breadcrumb.Item>Sản phẩm</Breadcrumb.Item>
             <Breadcrumb.Item>Xe đạp</Breadcrumb.Item> */}
-          </Breadcrumb>
-          {products.length === 0 ? (
-            <Spin
-              style={{
-                display: "block",
-                margin: "0 auto",
-                padding: "70px 100px",
-              }}
-            />
-          ) : (
-            <PageContent color={colorBgContainer} />
-          )}
-        </Content>
-        <Footer
-          style={{
-            textAlign: "center",
-          }}
-        >
-          Ant Design ©2023 Created by Ant UED
-        </Footer>
-      </Layout>
+        </Breadcrumb>
+        {products.length === 0 ? (
+          <Spin
+            style={{
+              display: "block",
+              margin: "0 auto",
+              padding: "70px 100px",
+            }}
+          />
+        ) : (
+          <PageContent color={colorBgContainer} />
+        )}
+      </Content>
+      {/* this below button just for scrolling to top */}
+      <Button
+        // scroll to the top
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+            // i want to slow that//
+          });
+        }}
+        className="fixed bottom-5 right-5 bg-white border-2 border-gray-300 rounded-xl h-auto"
+      >
+        <UpCircleOutlined className="text-3xl" />
+      </Button>
+      <Footer
+        style={{
+          textAlign: "center",
+        }}
+      >
+        Ant Design ©2023 Created by Ant UED
+      </Footer>
     </Layout>
   );
 };
