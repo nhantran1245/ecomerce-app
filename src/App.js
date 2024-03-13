@@ -6,6 +6,9 @@ import Admin from "./view/admin";
 
 const hist = createBrowserHistory();
 function App() {
+  // useEffect(() => {
+  //   navigate("/");
+  // }, []);
   return (
     <div className="App">
       <Router history={hist}>
@@ -15,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/admin/*" element={<Admin />} />
           <Route path="*" element={<UserPage />} />
+          {/* i want to redirect when endpoint error?  */}
         </Routes>
         {/* <UserPage /> */}
       </Router>

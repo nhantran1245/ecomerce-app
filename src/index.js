@@ -5,12 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import ProductsProvider from "./view/user/store/products-context";
-
+import ProductsCartProvider from "./view/user/store/products-cart-context";
+import ProductsFromDataBaseProvider from "./view/user/store/products-from-database-context";
 ReactDOM.render(
-  <ProductsProvider>
-    <App />
-  </ProductsProvider>,
+  <ProductsFromDataBaseProvider>
+    <ProductsCartProvider>
+      <App />
+    </ProductsCartProvider>
+  </ProductsFromDataBaseProvider>,
   document.getElementById("root")
 );
 
